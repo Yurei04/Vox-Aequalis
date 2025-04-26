@@ -1,14 +1,12 @@
 "use client"
 
 import AppSidebarMain from "@/components/elements/app-sidebar-main"
+import Homepage from "@/components/elements/homepage"
 import { SiteHeader } from "@/components/elements/site-header"
-import { Button } from "@/components/ui/button"
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
-import Link from "next/link"
-import { TypeAnimation } from "react-type-animation"
-import { motion } from "motion/react"
 
-export default function Homepage() {
+
+export default function HomepageSection() {
     return (
         <SidebarProvider
         style={
@@ -23,9 +21,7 @@ export default function Homepage() {
           <div className="flex flex-1 flex-col">
             <div className="@container/main flex flex-1 flex-col gap-2">
               <div className="flex flex-col items-center text-center justify-center gap-4 py-4 md:gap-6 md:py-6">
-                <motion.div>
-
-                </motion.div>
+                  <Homepage />
               </div>
             </div>
           </div>
