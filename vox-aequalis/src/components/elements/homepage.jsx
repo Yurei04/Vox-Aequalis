@@ -1,10 +1,28 @@
 "use client"
+import React from "react"
 import Link from "next/link"
 import { TypeAnimation } from "react-type-animation"
+import Autoplay from "embla-carousel-autoplay"
 import { motion } from "motion/react"
 import { Button } from "../ui/button"
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+  } from "@/components/ui/carousel"
+  import { Card, CardContent } from "@/components/ui/card"
+export default function Homepage(className, ...props) {
 
-export default function Homepage() {
+    const plugin = React.useRef(
+        Autoplay({ delay: 2000, stopOnInteraction: true })
+      )
+
+      const caroselImg = [
+        "/images/image1.jpg",
+        "/images/image2.jpg",
+        "/images/image3.png",
+        "/images/image4.png",
+      ]
     return (
         <>
             <div className="w-full h-auto m-5">
@@ -64,6 +82,49 @@ export default function Homepage() {
                     </motion.div>
                 </div>
             </div>
+            <div className="w-full z-[-1]">
+                <Carousel
+                    opts={{
+                        align: 'start',
+                        loop: true,
+                    }}
+                    className={"w-full"}
+                    plugins={[plugin.current]}
+                    orientation="horizontal"
+                >
+
+                </Carousel>
+                <Carousel
+                    opts={{
+                        align: 'start',
+                        loop: true,
+                    }}
+                    className={"w-full"}
+                    plugins={[plugin.current]}
+                    orientation="vertical"
+                >
+                <CarouselContent className="-mt-1 h-[300px]">
+                    {caroselImg.map((image, index) => (
+                        <CarouselItem key={index} className="pt-1 md:basis-1/2">
+                        <div className="p-1">
+                            <Card>
+                            <CardContent className="flex items-center justify-center p-6">
+                                <div className="relative w-full h-[150px] rounded-lg overflow-hidden">
+                                <img
+                                    src={image}
+                                    alt={`Image ${index + 1}`}
+                                    className="absolute inset-0 w-full h-full object-cover rounded-lg"
+                                />
+                                </div>
+                            </CardContent>
+                            </Card>
+                        </div>
+                        </CarouselItem>
+                    ))}
+                </CarouselContent>
+                </Carousel>
+            </div>
+
         </>
     )
 }
