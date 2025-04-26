@@ -1,10 +1,10 @@
 import Dashboard from "@/components/sections/dashboard/dashboard";
-import Image from "next/image";
+import Homepage from "@/components/sections/homepage/home";
 
 export default function Home() {
   return (
     <>
-      <Dashboard />
+      <Homepage />
     </>
   );
 }
