@@ -1,5 +1,7 @@
+"use client"
+
 import { AppSidebar } from "@/components/elements/app-sidebar"
-import { ChartAreaInteractive } from "@/components/elements/chart-area-interactive"
+import ChartAreaInteractive from "@/components/elements/chart-area-interactive"
 import { DataTable } from "@/components/elements/data-table"
 import { SectionCards } from "@/components/elements/section-cards"
 import { SiteHeader } from "@/components/elements/site-header"
@@ -10,7 +12,7 @@ import {
 
 import data from "./data.json"
 
-export default function Page() {
+export default function Dashboard() {
   return (
     <SidebarProvider
       style={
