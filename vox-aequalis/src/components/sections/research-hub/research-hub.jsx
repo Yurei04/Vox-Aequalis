@@ -3,7 +3,6 @@
 
 import AppSidebarMain from "@/components/elements/app-sidebar-main"
 import ChartAreaInteractive from "@/components/elements/chart-area-interactive"
-import { DataTable } from "@/components/elements/data-table"
 import { SectionCards } from "@/components/elements/section-cards"
 import { SiteHeader } from "@/components/elements/site-header"
 import {
@@ -11,8 +10,8 @@ import {
   SidebarProvider,
 } from "@/components/ui/sidebar"
 
-import data from "./data.json"
-import { DataTableResearch } from "@/components/elements/data-table-research"
+import data from "./contents.json"
+import {DataResearchTable}   from "@/components/elements/data-table-research"
 
 export default function ResearchHub () {
     return (
@@ -33,7 +32,7 @@ export default function ResearchHub () {
               <div className="px-4 lg:px-6">
                 <ChartAreaInteractive />
               </div>
-              <DataTableResearch data={data} />
+              <DataResearchTable data={data} />
             </div>
           </div>
         </div>
