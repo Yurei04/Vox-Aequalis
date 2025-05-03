@@ -1,9 +1,6 @@
 "use client"
 
-
 import AppSidebarMain from "@/components/elements/app-sidebar-main"
-import ChartAreaInteractive from "@/components/elements/chart-area-interactive"
-import { SectionCards } from "@/components/elements/section-cards"
 import { SiteHeader } from "@/components/elements/site-header"
 import {
   SidebarInset,
@@ -12,6 +9,8 @@ import {
 
 import data from "./contents.json"
 import {DataResearchTable}   from "@/components/elements/data-table-research"
+import ChartAreaInteractiveResearch from "./chart-area-int-research"
+import { SectionCardsResearch } from "./section-cards-research"
 
 export default function ResearchHub () {
     return (
@@ -28,9 +27,9 @@ export default function ResearchHub () {
         <div className="flex flex-1 flex-col">
           <div className="@container/main flex flex-1 flex-col gap-2">
             <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
-              <SectionCards />
+              <SectionCardsResearch />
               <div className="px-4 lg:px-6">
-                <ChartAreaInteractive />
+                <ChartAreaInteractiveResearch />
               </div>
               <DataResearchTable data={data} />
             </div>

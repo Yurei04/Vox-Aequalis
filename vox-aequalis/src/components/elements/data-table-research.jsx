@@ -271,11 +271,11 @@ const columns = [
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-32">
-          <DropdownMenuItem>Edit</DropdownMenuItem>
-          <DropdownMenuItem>Make a copy</DropdownMenuItem>
-          <DropdownMenuItem>Favorite</DropdownMenuItem>
+          <DropdownMenuItem>More</DropdownMenuItem>
+          <DropdownMenuItem>Rate</DropdownMenuItem>
+          <DropdownMenuItem>Save</DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem variant="destructive">Delete</DropdownMenuItem>
+          <DropdownMenuItem variant="destructive">Report</DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     ),
@@ -565,22 +565,25 @@ export function DataResearchTable({
 }
 
 const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
-]
+  { month: "December", socialIncomeInequality: 190, genderWageGap: 100 },
+  { month: "January", socialIncomeInequality: 186, genderWageGap: 80 },
+  { month: "February", socialIncomeInequality: 305, genderWageGap: 200 },
+  { month: "March", socialIncomeInequality: 237, genderWageGap: 120 },
+  { month: "April", socialIncomeInequality: 73, genderWageGap: 190 },
+  { month: "May", socialIncomeInequality: 209, genderWageGap: 130 },
+  { month: "June", socialIncomeInequality: 214, genderWageGap: 140 },
+];
+
+
 
 const chartConfig = {
-  desktop: {
-    label: "Desktop",
+  socialIncomeInequality: {
+    label: "socialIncomeInequality",
     color: "var(--primary)",
   },
 
-  mobile: {
-    label: "Mobile",
+  genderWageGap: {
+    label: "genderWageGap",
     color: "var(--primary)",
   }
 }
@@ -625,18 +628,18 @@ function TableCellViewer({
                     hide />
                   <ChartTooltip cursor={false} content={<ChartTooltipContent indicator="dot" />} />
                   <Area
-                    dataKey="mobile"
+                    dataKey="socialIncomeInequality"
                     type="natural"
-                    fill="var(--color-mobile)"
+                    fill="var(--color-socialIncomeInequality)"
                     fillOpacity={0.6}
-                    stroke="var(--color-mobile)"
+                    stroke="var(--color-socialIncomeInequality)"
                     stackId="a" />
                   <Area
-                    dataKey="desktop"
+                    dataKey="genderWageGap"
                     type="natural"
-                    fill="var(--color-desktop)"
+                    fill="var(--color-genderWageGap)"
                     fillOpacity={0.4}
-                    stroke="var(--color-desktop)"
+                    stroke="var(--color-genderWageGap)"
                     stackId="a" />
                 </AreaChart>
               </ChartContainer>
