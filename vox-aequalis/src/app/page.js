@@ -5,7 +5,7 @@ import ResearchHub from "@/components/sections/research-hub/research-hub";
 export default function Home() {
   return (
     <>
-      <ResearchHub />
+      <Dashboard />
     </>
   );
 }
