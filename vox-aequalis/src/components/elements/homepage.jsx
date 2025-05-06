@@ -31,10 +31,11 @@ export default function Homepage(className, ...props) {
     )
 
     const caroselImg = [
-    "/images/image1.jpg",
-    "/images/image2.jpg",
-    "/images/image3.png",
-    "/images/image4.png",
+    "/images/img1.jpg",
+    "/images/img2.jpg",
+    "/images/img3.jpg",
+    "/images/img_4.jpg",
+    "/images/img5.jpg",
     ]
 
     return (
