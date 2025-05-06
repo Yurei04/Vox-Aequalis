@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/sidebar"
 
 import { GraphCards } from "./graphs"
+import CommunityForum from "./community-forum"
 
 export default function Dashboard() {
   return (
@@ -27,6 +28,9 @@ export default function Dashboard() {
               <GraphCards />
               <div className="px-4 lg:px-6">
                 <ChartAreaInteractive />
+              </div>
+              <div className="flex flex-1 flex-col gap-4 p-4">
+                <CommunityForum />
               </div>
             </div>
           </div>
