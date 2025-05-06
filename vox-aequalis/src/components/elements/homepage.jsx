@@ -38,7 +38,7 @@ export default function Homepage(className, ...props) {
     ]
 
     return (
-        <div className="flex flex-1 items-center justify-center gap-2.5 w-full 2xl:flex-row md:flex-col">
+        <div className="flex flex-1 items-center justify-center gap-2.5 w-full 2xl:flex-row md:flex-col overflow-x-hidden">
            <div className="flex flex-col gap-2.5 w-full">
                 <div className="w-full z-[0] p-5 flex opacity-50">
                     <Carousel
@@ -148,12 +148,17 @@ export default function Homepage(className, ...props) {
                         <div className="flex flex-row gap-5 items-center justify-center m-5 p-2">
                             <Button>
                                 <Link href={"#"}>
-                                    Button
+                                    Analytics Dashboard
                                 </Link>
                             </Button>
                             <Button>
                                 <Link href={"#"}>
-                                    Button
+                                    Community Forum
+                                </Link>
+                            </Button>
+                            <Button>
+                                <Link href={"#"}>
+                                    Chat Bot
                                 </Link>
                             </Button>
                         </div>
