@@ -1,0 +1,50 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good evening"],
+        "responses": ["Hello!", "Hi there!", "Greetings!", "Welcome!"]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["Bye", "See you", "Goodbye", "Catch you later"],
+        "responses": ["See you later!", "Goodbye!", "Take care!", "Have a great day!"]
+      },
+      {
+        "tag": "thanks",
+        "patterns": ["Thanks", "Thank you", "Much appreciated"],
+        "responses": ["You're welcome!", "No problem!", "Glad I could help!"]
+      },
+      {
+        "tag": "social_inequality",
+        "patterns": [
+          "What is social inequality?",
+          "Tell me about social inequality",
+          "Explain social inequality",
+          "How does social inequality affect people?",
+          "Why is there social inequality?"
+        ],
+        "responses": [
+          "Social inequality refers to the unequal distribution of resources, opportunities, and privileges within a society.",
+          "It includes disparities in income, education, healthcare, and housing, often affecting marginalized communities the most.",
+          "Social inequality is influenced by factors like class, race, ethnicity, and location, and can lead to limited access to basic human rights for certain groups."
+        ]
+      },
+      {
+        "tag": "gender_inequality",
+        "patterns": [
+          "What is gender inequality?",
+          "Tell me about gender inequality",
+          "Why is gender inequality a problem?",
+          "How does gender inequality show up in society?",
+          "Explain the issue of gender inequality"
+        ],
+        "responses": [
+          "Gender inequality is the unfair treatment of individuals based on their gender, often resulting in unequal opportunities and outcomes for women, men, and non-binary people.",
+          "It can be seen in wage gaps, underrepresentation in leadership roles, and social expectations based on gender.",
+          "Addressing gender inequality involves promoting equal rights, representation, and access for all genders."
+        ]
+      }
+    ]
+  }
+  

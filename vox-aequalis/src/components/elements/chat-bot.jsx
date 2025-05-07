@@ -8,28 +8,9 @@ import { FileChartLine, Send } from "lucide-react"
 import { useEffect, useState, useRef } from "react"
 
 export default function ChatBotAI() {
-    const [QNADatabase, setQNADatabase] = useState([]);
     const [messages, setMessages] = useState([{ role: "bot", content: "Greetings, how can I help you today?" }]);
     const chatEndRef = useRef(null);
     const [query, setQuery] = useState("");
-    let botResponse = "Sorry, I do not understand.";
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                fetch("") 
-                    .then((res) => res.json())
-                    .then((data) => {
-                        console.log("Database has been loaded", data);
-                        setQNADatabase(data);
-                    });
-            } catch (error) {
-                console.log("Failed to load Database", error);
-                setMessages([{ role: "bot", content: "There is an error in loading resources. Please come back later :)" }]);
-            }
-        };
-        fetchData();
-    }, []);
 
     useEffect(() => {
         const listener = event => {
@@ -52,13 +33,28 @@ export default function ChatBotAI() {
         if (!query.trim()) return;
         const userMessage = { role: "user", content: query };
         setMessages(prev => [...prev, userMessage]);
-        setQuery("");
-
-        setTimeout(() => {
-            const botMessage = { role: "bot", content: botResponse };
+    
+        try {
+            const res = await fetch("http://localhost:5000/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: query }),
+            });
+    
+            const data = await res.json();
+            const botMessage = { role: "bot", content: data.response || "Sorry, I do not understand." };
             setMessages(prev => [...prev, botMessage]);
-        }, 500);
+        } catch (error) {
+            console.error("API error:", error);
+            setMessages(prev => [
+                ...prev,
+                { role: "bot", content: "Server error. Please try again later." },
+            ]);
+        }
+    
+        setQuery("");
     };
+    
 
     return (
         <div className="flex flex-col w-full h-screen items-center gap-5 p-5">
