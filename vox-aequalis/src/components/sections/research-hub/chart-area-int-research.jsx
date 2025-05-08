@@ -29,7 +29,7 @@ export const description = "An interactive area chart"
 
 {/* Data below are calculated average per year from their respective csv data for further clearance 
     Please check the uploaded csv or the research paper publish on devpost thank
-  */}
+*/}
 
   const chartData = [
     { year: 2010, IncomeInequality: 24, GiniIndex: 43 },
@@ -54,8 +54,8 @@ export const description = "An interactive area chart"
 
 
 const chartConfig = {
-  visitors: {
-    label: "Visitors",
+  data: {
+    label: "Data",
   },
 
   socialInequality: {
@@ -64,7 +64,7 @@ const chartConfig = {
   },
 
   genderWageGap: {
-    label: "Gender Wage Gap",
+    label: "Gini Index",
     color: "var(--primary)",
   }
 }

@@ -28,7 +28,67 @@ const contents = {
             value: "item-3"
         },
 
+    ],
+
+    
+    research: [
+        {
+            title: "What is Vox Aequalis",
+            des: "Vox Aequalis is a website to show analytics about gender/social inequalities and as well as a place where you can join communities, ask questions from people or our chat bot about your experiences. To spread the word and allow people to be inspired and further undedrstand the situation",
+            value: "item-1"
+        },
+        {
+            title: "What is Vox Aequalis",
+            des: "Vox Aequalis is a website to show analytics about gender/social inequalities and as well as a place where you can join communities, ask questions from people or our chat bot about your experiences. To spread the word and allow people to be inspired and further undedrstand the situation",
+            value: "item-2"
+        },
+        {
+            title: "What is Vox Aequalis",
+            des: "Vox Aequalis is a website to show analytics about gender/social inequalities and as well as a place where you can join communities, ask questions from people or our chat bot about your experiences. To spread the word and allow people to be inspired and further undedrstand the situation",
+            value: "item-3"
+        },
+
+    ],
+
+    gender: [
+        {
+            title: "What is Vox Aequalis",
+            des: "Vox Aequalis is a website to show analytics about gender/social inequalities and as well as a place where you can join communities, ask questions from people or our chat bot about your experiences. To spread the word and allow people to be inspired and further undedrstand the situation",
+            value: "item-1"
+        },
+        {
+            title: "What is Vox Aequalis",
+            des: "Vox Aequalis is a website to show analytics about gender/social inequalities and as well as a place where you can join communities, ask questions from people or our chat bot about your experiences. To spread the word and allow people to be inspired and further undedrstand the situation",
+            value: "item-2"
+        },
+        {
+            title: "What is Vox Aequalis",
+            des: "Vox Aequalis is a website to show analytics about gender/social inequalities and as well as a place where you can join communities, ask questions from people or our chat bot about your experiences. To spread the word and allow people to be inspired and further undedrstand the situation",
+            value: "item-3"
+        },
+
+    ],
+
+    social: [
+        {
+            title: "What is Vox Aequalis",
+            des: "Vox Aequalis is a website to show analytics about gender/social inequalities and as well as a place where you can join communities, ask questions from people or our chat bot about your experiences. To spread the word and allow people to be inspired and further undedrstand the situation",
+            value: "item-1"
+        },
+        {
+            title: "What is Vox Aequalis",
+            des: "Vox Aequalis is a website to show analytics about gender/social inequalities and as well as a place where you can join communities, ask questions from people or our chat bot about your experiences. To spread the word and allow people to be inspired and further undedrstand the situation",
+            value: "item-2"
+        },
+        {
+            title: "What is Vox Aequalis",
+            des: "Vox Aequalis is a website to show analytics about gender/social inequalities and as well as a place where you can join communities, ask questions from people or our chat bot about your experiences. To spread the word and allow people to be inspired and further undedrstand the situation",
+            value: "item-3"
+        },
+
     ]
+
+    
 }
 
 

@@ -1,7 +1,8 @@
 "use client"
 
+import React from "react"
 import { GitCommitVertical, TrendingUp } from "lucide-react"
-import { Bar, BarChart, CartesianGrid, LabelList,  Line, LineChart, XAxis, YAxis } from "recharts"
+import { Pie, PieChart, Bar, BarChart, CartesianGrid, Label, LabelList,  Line, LineChart, XAxis, YAxis } from "recharts"
 import {
   Card,
   CardContent,
@@ -19,21 +20,24 @@ import {
 } from "@/components/ui/chart"
 
 const chartData = [
-  { month: "January", desktop: 186 },
-  { month: "February", desktop: 305 },
-  { month: "March", desktop: 237 },
-  { month: "April", desktop: 73 },
-  { month: "May", desktop: 209 },
-  { month: "June", desktop: 214 },
-]
+    { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
+    { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
+  ]
 
 
-const chartConfig = {
-  desktop: {
-    label: "Desktop",
-    color: "var(--primary)",
-  },
-} 
+  const chartConfig = {
+    visitors: {
+      label: "Visitors",
+    },
+    chrome: {
+      label: "Chrome",
+      color: "var(--primary)",
+    },
+    safari: {
+      label: "Safari",
+      color: "var(--secondary)",
+    },
+  }
 
 
 const chartDataTwo = [
@@ -97,55 +101,78 @@ const chartDataFour = [
   } 
 
 export function GraphCards() {
+    const totalVisitors = React.useMemo(() => {
+        return chartData.reduce((acc, curr) => acc + curr.visitors, 0)
+      }, [])
+
+
   return (
     <div
       className="*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 px-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-4">
-          <Card>
-            <CardHeader>
-                <CardTitle>Bar Chart - Label</CardTitle>
+         <Card className="flex flex-col">
+            <CardHeader className="items-center pb-0">
+                <CardTitle>Pie Chart - Donut with Text</CardTitle>
                 <CardDescription>January - June 2024</CardDescription>
             </CardHeader>
-            <CardContent>
-                <ChartContainer config={chartConfig}>
-                <BarChart
-                    accessibilityLayer
-                    data={chartData}
-                    margin={{
-                    top: 20,
-                    }}
+            <CardContent className="flex-1 pb-0">
+                <ChartContainer
+                config={chartConfig}
+                className="mx-auto aspect-square max-h-[250px]"
                 >
-                    <CartesianGrid vertical={false} />
-                    <XAxis
-                    dataKey="month"
-                    tickLine={false}
-                    tickMargin={10}
-                    axisLine={false}
-                    tickFormatter={(value) => value.slice(0, 3)}
-                    />
+                <PieChart>
                     <ChartTooltip
                     cursor={false}
                     content={<ChartTooltipContent hideLabel />}
                     />
-                    <Bar dataKey="desktop" fill="var(--color-desktop)" radius={8}>
-                    <LabelList
-                        position="top"
-                        offset={12}
-                        className="fill-foreground"
-                        fontSize={12}
+                    <Pie
+                    data={chartData}
+                    dataKey="visitors"
+                    nameKey="browser"
+                    innerRadius={60}
+                    strokeWidth={5}
+                    >
+                    <Label
+                        content={({ viewBox }) => {
+                        if (viewBox && "cx" in viewBox && "cy" in viewBox) {
+                            return (
+                            <text
+                                x={viewBox.cx}
+                                y={viewBox.cy}
+                                textAnchor="middle"
+                                dominantBaseline="middle"
+                            >
+                                <tspan
+                                x={viewBox.cx}
+                                y={viewBox.cy}
+                                className="fill-foreground text-3xl font-bold"
+                                >
+                                {totalVisitors.toLocaleString()}
+                                </tspan>
+                                <tspan
+                                x={viewBox.cx}
+                                y={(viewBox.cy || 0) + 24}
+                                className="fill-muted-foreground"
+                                >
+                                Visitors
+                                </tspan>
+                            </text>
+                            )
+                        }
+                        }}
                     />
-                    </Bar>
-                </BarChart>
+                    </Pie>
+                </PieChart>
                 </ChartContainer>
             </CardContent>
-            <CardFooter className="flex-col items-start gap-2 text-sm">
-                <div className="flex gap-2 font-medium leading-none">
+            <CardFooter className="flex-col gap-2 text-sm">
+                <div className="flex items-center gap-2 font-medium leading-none">
                 Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
                 </div>
                 <div className="leading-none text-muted-foreground">
                 Showing total visitors for the last 6 months
                 </div>
             </CardFooter>
-        </Card>
+            </Card>
 
         <Card>
             <CardHeader>

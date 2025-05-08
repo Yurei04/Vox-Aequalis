@@ -31,8 +31,8 @@ export default function Homepage(className, ...props) {
     )
 
     const caroselImg = [
-    "/images/img1.jpg",
     "/images/img2.jpg",
+    "/images/img1.jpg",
     "/images/img3.jpg",
     "/images/img_4.jpg",
     "/images/img5.jpg",
@@ -61,7 +61,7 @@ export default function Homepage(className, ...props) {
                                     <div className="relative w-full h-[150px] rounded-lg overflow-hidden">
                                     <img
                                         src={image}
-                                        alt={`Image ${index + 1}`}
+                                        alt={`Image ${index + 4}`}
                                         className="absolute inset-0 w-full h-full object-cover rounded-lg"
                                     />
                                     </div>
@@ -187,7 +187,7 @@ export default function Homepage(className, ...props) {
                                     <div className="relative w-full h-[150px] rounded-lg overflow-hidden">
                                     <img
                                         src={image}
-                                        alt={`Image ${index + 2}`}
+                                        alt={`Image ${index + 3}`}
                                         className="absolute inset-0 w-full h-full object-cover rounded-lg"
                                     />
                                     </div>
