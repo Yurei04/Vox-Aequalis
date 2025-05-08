@@ -35,9 +35,9 @@ import {
 
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: "John Doe",
+    email: "WhoKnows@example.com",
+    avatar: "/avatars/None.jpg",
   },
   navMain: [
     {
@@ -46,22 +46,22 @@ const data = {
       icon: LayoutDashboardIcon,
     },
     {
-      title: "Lifecycle",
+      title: "Resource",
       url: "#",
       icon: ListIcon,
     },
     {
-      title: "Analytics",
+      title: "Vox AI",
       url: "#",
       icon: BarChartIcon,
     },
     {
-      title: "Projects",
+      title: "About",
       url: "#",
       icon: FolderIcon,
     },
     {
-      title: "Team",
+      title: "Contact",
       url: "#",
       icon: UsersIcon,
     },
@@ -162,7 +162,7 @@ export default function AppSidebarMain() {
             >
               <a href="#">
                 <ArrowUpCircleIcon className="h-5 w-5" />
-                <span className="text-base font-semibold">Acme Inc.</span>
+                <span className="text-base font-semibold">Vox Aequalis</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>

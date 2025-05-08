@@ -36,6 +36,7 @@ export default function Homepage(className, ...props) {
     "/images/img3.jpg",
     "/images/img_4.jpg",
     "/images/img5.jpg",
+    
     ]
 
     return (
