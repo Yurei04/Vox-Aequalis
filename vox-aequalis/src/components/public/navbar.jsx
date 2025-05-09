@@ -18,13 +18,13 @@ import ModeToggle from "@/components/elements/styles-modes";
 const components = [
     {
         title: "About",
-        href: "vox-aequalis/src/components/sections/homepage/home.jsx",
+        href: "/src/layoutHome",
         description:
           "Come to About Us and learn the goal and purpose of Vox-Aequalis.",
       },
       {
         title: "Vox AI",
-        href: "/research-hub/research-hub",
+        href: "/pages/homepage/home",
         description:
           "An AI chat-bot that uses NLP and can answer your questions regarding the website or inequality.",
       },
@@ -36,7 +36,7 @@ const components = [
       },
       {
         title: "Community Page",
-        href: "",
+        href: "/pages/dashboard/dashboard",
         description: "One of the data analytic page where you can check statistical data aswell as job market information.",
       },
       {
@@ -71,7 +71,7 @@ export default function NavigationMenuMain () {
                                         </a>
                                     </NavigationMenuLink>
                                 </li>
-                                <ListItem href="#" title="Introduction">
+                                <ListItem href="/pages/homepage/home" title="Introduction">
                                     Welcome to Vox-Aequalis
                                 </ListItem>
                                 <ListItem href="#" title="About">

@@ -46,23 +46,6 @@ const contents = {
         },
     ],
 
-    gender: [
-        {
-            title: "What is gender inequality?",
-            des: "Gender inequality refers to the unequal treatment or perception of individuals based on their gender, often manifesting in pay gaps, limited opportunities, workplace bias, and social expectations. It affects all genders but disproportionately impacts women and marginalized identities.",
-            value: "item-1"
-        },
-        {
-            title: "How does gender inequality affect people?",
-            des: "Gender inequality limits access to resources, career advancement, education, and safety. It contributes to mental health challenges, economic disparity, and systemic oppression, especially in workplaces and institutions that lack inclusive policies.",
-            value: "item-2"
-        },
-        {
-            title: "How can Vox Aequalis help mitigate gender inequality?",
-            des: "Vox Aequalis highlights gender disparity data across industries and regions, enabling users to identify patterns and demand change. Its job review tool exposes workplace bias, and its forum and chatbot foster discussions that raise awareness and promote gender equity.",
-            value: "item-3"
-        },
-    ],
 
     social: [
         {
@@ -121,28 +104,12 @@ export default function About () {
                             ))}
                         </Accordion>
                     </CardContent>
-                </Card>
+                </Card> 
 
                 <Card className="w-[70%] flex">
                     <CardContent>
                         <Accordion type="single" collapsible className="w-full">
-                        <Label>What is/are Gender Inequality</Label>    
-                            {contents.website.map((content) => (
-                                <AccordionItem value={content.value}>
-                                    <AccordionTrigger>{content.title}</AccordionTrigger>
-                                    <AccordionContent>
-                                        {content.des}
-                                    </AccordionContent>
-                                </AccordionItem>
-                            ))}
-                        </Accordion>
-                    </CardContent>
-                </Card>   
-
-                <Card className="w-[70%] flex">
-                    <CardContent>
-                        <Accordion type="single" collapsible className="w-full">
-                        <Label>What is/are Social Inequality</Label>   
+                        <Label>What is/are Inequality</Label>   
                             {contents.website.map((content) => (
                                 <AccordionItem value={content.value}>
                                     <AccordionTrigger>{content.title}</AccordionTrigger>

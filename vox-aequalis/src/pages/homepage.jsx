@@ -4,7 +4,7 @@ import Link from "next/link"
 import { TypeAnimation } from "react-type-animation"
 import Autoplay from "embla-carousel-autoplay"
 import { motion } from "motion/react"
-import { Button } from "../ui/button"
+import { Button } from "@/components/ui/button"
 import {
     Carousel,
     CarouselContent,
@@ -119,13 +119,13 @@ export default function Homepage(className, ...props) {
                             <br />
                         <TypeAnimation 
                             sequence={[
-                                "Seek",
+                                "Learn",
                                 1500,
-                                "Apply, Learn",
+                                "Acknowledge, Understand",
                                 1500,
-                                "Seek, Apply, Learn",
+                                "Learn, Acknowledge, Understand",
                                 1500,
-                                "Apply, Learn",
+                                "Acknowledge, Understand",
                                 1500,
                                 "",
                                 1500
