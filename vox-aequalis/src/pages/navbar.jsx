@@ -17,39 +17,33 @@ import ModeToggle from "../elements/styles-modes";
 
 const components = [
     {
-        title: "Alert Dialog",
-        href: "/docs/primitives/alert-dialog",
+        title: "About",
+        href: "vox-aequalis/src/components/sections/homepage/home.jsx",
         description:
-          "A modal dialog that interrupts the user with important content and expects a response.",
+          "Come to About Us and learn the goal and purpose of Vox-Aequalis.",
       },
       {
-        title: "Hover Card",
-        href: "/docs/primitives/hover-card",
+        title: "Vox AI",
+        href: "/research-hub/research-hub",
         description:
-          "For sighted users to preview content available behind a link.",
+          "An AI chat-bot that uses NLP and can answer your questions regarding the website or inequality.",
       },
       {
-        title: "Progress",
-        href: "/docs/primitives/progress",
+        title: "Research Hub",
+        href: "",
         description:
-          "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+          "A data analytic page where you can see statistical data as well our community forum and groups",
       },
       {
-        title: "Scroll-area",
-        href: "/docs/primitives/scroll-area",
-        description: "Visually or semantically separates content.",
+        title: "Community Page",
+        href: "",
+        description: "One of the data analytic page where you can check statistical data aswell as job market information.",
       },
       {
-        title: "Tabs",
-        href: "/docs/primitives/tabs",
+        title: "Contact",
+        href: "",
         description:
-          "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-      },
-      {
-        title: "Tooltip",
-        href: "/docs/primitives/tooltip",
-        description:
-          "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+          "Contact us for recommendations, infomartion or suggestions.",
       },
 ]
 
@@ -72,19 +66,19 @@ export default function NavigationMenuMain () {
                                                 Vox Aequalis
                                             </div>
                                             <p className="text-sm leading-tight text-muted-foreground">
-                                                Vox Aequalis is a website where you can seek, apply and learn ways to help.
+                                            Vox Aequalis is a data analytics platform that visualizes and forecasts inequality trends using datasets from Kaggle and the World Bank.
                                             </p>
                                         </a>
                                     </NavigationMenuLink>
                                 </li>
                                 <ListItem href="#" title="Introduction">
-                                    BFDIAGOBIDFADIAIGD
+                                    Welcome to Vox-Aequalis
                                 </ListItem>
-                                <ListItem href="#" title="Introduction">
-                                    BFDIAGOBIDFADIAIGD
+                                <ListItem href="#" title="About">
+                                    Whats is Vox-Aequalis
                                 </ListItem>
-                                <ListItem href="#" title="Introduction">
-                                    BFDIAGOBIDFADIAIGD
+                                <ListItem href="#" title="Contact">
+                                    Come join us!
                                 </ListItem>
                             </ul>
                         </NavigationMenuContent>

@@ -8,15 +8,15 @@ import {
   SidebarProvider,
 } from "@/components/ui/sidebar"
 
-import { GraphCards } from "./graphs"
-import CommunityForum from "./community-forum"
+import { GraphCards } from "../../elements/graphs"
+import CommunityForum from "../../elements/community-forum"
 
 export default function Dashboard() {
   return (
     <SidebarProvider
       style={
         {
-          "--sidebar-width": "350px"
+          "--sidebar-width": "400px"
         }
       }>
       <AppSidebar variant="inset" />
