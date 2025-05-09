@@ -19,90 +19,85 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart"
 
+import "@/app/globals.css";
+
+
 const chartData = [
-    { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
-    { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
+    { subject: "men", total: 1856, fill: "var(--primary)" },
+    { subject: "women", total: 2688, fill: "var(--chart-4)" },
   ]
 
 
   const chartConfig = {
-    visitors: {
-      label: "Visitors",
+    total: {
+      label: "total",
     },
-    chrome: {
-      label: "Chrome",
+    men: {
+      label: "men",
       color: "var(--primary)",
     },
-    safari: {
-      label: "Safari",
-      color: "var(--secondary)",
+    women: {
+      label: "women",
+      color: "var(--chart-4)",
     },
   }
+  
 
 
 const chartDataTwo = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
+    { country: "SouthKorea", value: 33.82 },
+    { country: "Estonia", value: 28.16 },
+    { country: "Austria", value: 24.50 },
+    { country: "Russia", value: 24.42 },
+    { country: "Germany", value: 23.20 },
+    { country: "Brazil", value: 22.25 },
 ]
+
 const chartConfigTwo = {
-  desktop: {
-    label: "Desktop",
+  value: {
+    label: "Value",
     color: "var(--primary)",
   },
-  mobile: {
-    label: "Mobile",
-    color: "var(--primary)",
-  },
-  label: {
+  country: {
     color: "var(--primary)",
   },
 } 
 
 const chartDataThree = [
-    { month: "January", desktop: 186, mobile: 80 },
-    { month: "February", desktop: 305, mobile: 200 },
-    { month: "March", desktop: 237, mobile: 120 },
-    { month: "April", desktop: 73, mobile: 190 },
-    { month: "May", desktop: 209, mobile: 130 },
-    { month: "June", desktop: 214, mobile: 140 },
-  ]
+    { year: 2025, forecast: 34.52 },
+    { year: 2026, forecast: 34.20 },
+    { year: 2027, forecast: 33.89 },
+    { year: 2028, forecast: 33.57 },
+    { year: 2029, forecast: 33.25 },
+    { year: 2030, forecast: 32.94 },
+];
+  
 const chartConfigThree = {
-    desktop: {
-        label: "Desktop",
-        color: "var(--primary)",
-    },
-    mobile: {
-        label: "Mobile",
+    forecast: {
+        label: "forecast",
         color: "var(--primary)",
     },
 }
 
 const chartDataFour = [
-    { month: "January", desktop: 186, mobile: 80 },
-    { month: "February", desktop: 305, mobile: 200 },
-    { month: "March", desktop: 237, mobile: 120 },
-    { month: "April", desktop: 73, mobile: 190 },
-    { month: "May", desktop: 209, mobile: 130 },
-    { month: "June", desktop: 214, mobile: 140 },
-  ]
-  const chartConfigFour = {
-    desktop: {
-      label: "Desktop",
-      color: "var(--primary)",
+    { year: 2025, forecast: -0.13 },
+    { year: 2026, forecast: -0.13 },
+    { year: 2027, forecast: -0.13 },
+    { year: 2028, forecast: -0.13 },
+    { year: 2029, forecast: -0.13 },
+    { year: 2030, forecast: -0.13 },
+];
+  
+const chartConfigFour = {
+    forecast: {
+        label: "forecast",
+        color: "var(--primary)",
     },
-    mobile: {
-      label: "Mobile",
-      color: "var(--primary)",
-    },
-  } 
+}
 
 export function GraphCards() {
-    const totalVisitors = React.useMemo(() => {
-        return chartData.reduce((acc, curr) => acc + curr.visitors, 0)
+    const totalSubject = React.useMemo(() => {
+        return chartData.reduce((acc, curr) => acc + curr.total, 0)
       }, [])
 
 
@@ -111,8 +106,8 @@ export function GraphCards() {
       className="*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 px-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-4">
          <Card className="flex flex-col">
             <CardHeader className="items-center pb-0">
-                <CardTitle>Pie Chart - Donut with Text</CardTitle>
-                <CardDescription>January - June 2024</CardDescription>
+                <CardTitle>Pie Chart - Labor Force Percentage</CardTitle>
+                <CardDescription>1970 - 2024 Data</CardDescription>
             </CardHeader>
             <CardContent className="flex-1 pb-0">
                 <ChartContainer
@@ -126,8 +121,8 @@ export function GraphCards() {
                     />
                     <Pie
                     data={chartData}
-                    dataKey="visitors"
-                    nameKey="browser"
+                    dataKey="total"
+                    nameKey="subject"
                     innerRadius={60}
                     strokeWidth={5}
                     >
@@ -146,14 +141,14 @@ export function GraphCards() {
                                 y={viewBox.cy}
                                 className="fill-foreground text-3xl font-bold"
                                 >
-                                {totalVisitors.toLocaleString()}
+                                {totalSubject.toLocaleString()}
                                 </tspan>
                                 <tspan
                                 x={viewBox.cx}
                                 y={(viewBox.cy || 0) + 24}
                                 className="fill-muted-foreground"
                                 >
-                                Visitors
+                                Total %
                                 </tspan>
                             </text>
                             )
@@ -166,88 +161,24 @@ export function GraphCards() {
             </CardContent>
             <CardFooter className="flex-col gap-2 text-sm">
                 <div className="flex items-center gap-2 font-medium leading-none">
-                Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+                Statistical Data of labor work force <TrendingUp className="h-4 w-4" />
                 </div>
                 <div className="leading-none text-muted-foreground">
-                Showing total visitors for the last 6 months
-                </div>
-            </CardFooter>
-            </Card>
-
-        <Card>
-            <CardHeader>
-                <CardTitle>Bar Chart - Custom Label</CardTitle>
-                <CardDescription>January - June 2024</CardDescription>
-            </CardHeader>
-            <CardContent>
-                <ChartContainer config={chartConfigTwo}>
-                <BarChart
-                    accessibilityLayer
-                    data={chartDataTwo}
-                    layout="vertical"
-                    margin={{
-                    right: 16,
-                    }}
-                >
-                    <CartesianGrid horizontal={false} />
-                    <YAxis
-                    dataKey="month"
-                    type="category"
-                    tickLine={false}
-                    tickMargin={10}
-                    axisLine={false}
-                    tickFormatter={(value) => value.slice(0, 3)}
-                    hide
-                    />
-                    <XAxis dataKey="desktop" type="number" hide />
-                    <ChartTooltip
-                    cursor={false}
-                    content={<ChartTooltipContent indicator="line" />}
-                    />
-                    <Bar
-                    dataKey="desktop"
-                    layout="vertical"
-                    fill="var(--color-desktop)"
-                    radius={4}
-                    >
-                    <LabelList
-                        dataKey="month"
-                        position="insideLeft"
-                        offset={8}
-                        className="fill-[--color-label]"
-                        fontSize={12}
-                    />
-                    <LabelList
-                        dataKey="desktop"
-                        position="right"
-                        offset={8}
-                        className="fill-foreground"
-                        fontSize={12}
-                    />
-                    </Bar>
-                </BarChart>
-                </ChartContainer>
-            </CardContent>
-            <CardFooter className="flex-col items-start gap-2 text-sm">
-                <div className="flex gap-2 font-medium leading-none">
-                Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-                </div>
-                <div className="leading-none text-muted-foreground">
-                Showing total visitors for the last 6 months
+                Showing OBS data average.
                 </div>
             </CardFooter>
         </Card>
 
         <Card>
             <CardHeader>
-                <CardTitle>Line Chart - Label</CardTitle>
-                <CardDescription>January - June 2024</CardDescription>
+                <CardTitle>Line Chart - Inequality Prediction</CardTitle>
+                <CardDescription>2025 - 2030</CardDescription>
             </CardHeader>
             <CardContent>
-                <ChartContainer config={chartConfigThree}>
+                <ChartContainer config={chartConfigFour}>
                 <LineChart
                     accessibilityLayer
-                    data={chartDataThree}
+                    data={chartDataFour}
                     margin={{
                     top: 20,
                     left: 12,
@@ -256,23 +187,23 @@ export function GraphCards() {
                 >
                     <CartesianGrid vertical={false} />
                     <XAxis
-                    dataKey="month"
+                    dataKey="year"
                     tickLine={false}
                     axisLine={false}
                     tickMargin={8}
-                    tickFormatter={(value) => value.slice(0, 3)}
+                    tickFormatter={(value) => value.toString()}
                     />
                     <ChartTooltip
                     cursor={false}
                     content={<ChartTooltipContent indicator="line" />}
                     />
                     <Line
-                    dataKey="desktop"
+                    dataKey="forecast"
                     type="natural"
-                    stroke="var(--color-desktop)"
+                    stroke="var(--primary)"
                     strokeWidth={2}
                     dot={{
-                        fill: "var(--color-desktop)",
+                        fill: "var(--primary)",
                     }}
                     activeDot={{
                         r: 6,
@@ -290,73 +221,139 @@ export function GraphCards() {
             </CardContent>
             <CardFooter className="flex-col items-start gap-2 text-sm">
                 <div className="flex gap-2 font-medium leading-none">
-                Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+                    Decrease of 0.66% in 5 Years <TrendingUp className="h-4 w-4" />
                 </div>
                 <div className="leading-none text-muted-foreground">
-                Showing total visitors for the last 6 months
+                    Showing of predicted Inequality
                 </div>
             </CardFooter>
         </Card>
 
         <Card>
             <CardHeader>
-                <CardTitle>Line Chart - Custom Dots</CardTitle>
-                <CardDescription>January - June 2024</CardDescription>
+                <CardTitle>Bar Chart - Gender Wage Gap</CardTitle>
+                <CardDescription>Top 6 Countries</CardDescription>
             </CardHeader>
             <CardContent>
-                <ChartContainer config={chartConfigFour}>
+                <ChartContainer config={chartConfigTwo}>
+                <BarChart
+                    accessibilityLayer
+                    data={chartDataTwo}
+                    layout="vertical"
+                    margin={{
+                    right: 16,
+                    }}
+                >
+                    <CartesianGrid horizontal={false} />
+                    <YAxis
+                    dataKey="country"
+                    type="category"
+                    tickLine={false}
+                    tickMargin={10}
+                    axisLine={false}
+                    tickFormatter={(value) => value.toString()}
+                    hide
+                    />
+                    <XAxis dataKey="value" type="number" hide />
+                    <ChartTooltip
+                    cursor={false}
+                    content={<ChartTooltipContent indicator="line" />}
+                    />
+                    <Bar
+                    dataKey="value"
+                    layout="vertical"
+                    fill="var(--primary)"
+                    radius={4}
+                    >
+                    <LabelList
+                        dataKey="country"
+                        position="insideLeft"
+                        offset={8}
+                        className="fill-[--color-label]"
+                        fontSize={12}
+                    />
+                    <LabelList
+                        dataKey="value"
+                        position="right"
+                        offset={8}
+                        className="fill-foreground"
+                        fontSize={12}
+                    />
+                    </Bar>
+                </BarChart>
+                </ChartContainer>
+            </CardContent>
+            <CardFooter className="flex-col items-start gap-2 text-sm">
+                <div className="flex gap-2 font-medium leading-none">
+                    Gender wage gap percentages
+                </div>
+                <div className="leading-none text-muted-foreground">
+                    Source: Kaggle Dataset
+                </div>
+            </CardFooter>
+        </Card>
+
+        <Card>
+            <CardHeader>
+                <CardTitle>Line Chart - Gender Inequality Prediction</CardTitle>
+                <CardDescription>2024 - 2030</CardDescription>
+            </CardHeader>
+            <CardContent>
+                <ChartContainer config={chartConfigThree}>
                 <LineChart
                     accessibilityLayer
-                    data={chartDataFour}
+                    data={chartDataThree}
                     margin={{
+                    top: 20,
                     left: 12,
                     right: 12,
                     }}
                 >
                     <CartesianGrid vertical={false} />
                     <XAxis
-                    dataKey="month"
+                    dataKey="year"
                     tickLine={false}
                     axisLine={false}
                     tickMargin={8}
-                    tickFormatter={(value) => value.slice(0, 3)}
+                    tickFormatter={(value) => value.toString()}
                     />
                     <ChartTooltip
                     cursor={false}
-                    content={<ChartTooltipContent hideLabel />}
+                    content={<ChartTooltipContent indicator="line" />}
                     />
                     <Line
-                    dataKey="desktop"
+                    dataKey="forecast"
                     type="natural"
-                    stroke="var(--color-desktop)"
+                    stroke="var(--primary)"
                     strokeWidth={2}
-                    dot={({ cx, cy, payload }) => {
-                        const r = 24
-                        return (
-                        <GitCommitVertical
-                            key={payload.month}
-                            x={cx - r / 2}
-                            y={cy - r / 2}
-                            width={r}
-                            height={r}
-                            fill="hsl(var(--background))"
-                            stroke="var(--color-desktop)"
-                        />
-                        )
+                    dot={{
+                        fill: "var(--primary)",
                     }}
+                    activeDot={{
+                        r: 6,
+                    }}
+                    >
+                    <LabelList
+                        position="top"
+                        offset={12}
+                        className="fill-foreground"
+                        fontSize={12}
                     />
+                    </Line>
                 </LineChart>
                 </ChartContainer>
             </CardContent>
             <CardFooter className="flex-col items-start gap-2 text-sm">
                 <div className="flex gap-2 font-medium leading-none">
-                Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+                    Decrease of 0.96% in 5 Years <TrendingUp className="h-4 w-4" />
                 </div>
                 <div className="leading-none text-muted-foreground">
-                Showing total visitors for the last 6 months
+                    Showing of predicted gender Inequality
                 </div>
             </CardFooter>
         </Card>
+
+        
     </div>
   );
 }

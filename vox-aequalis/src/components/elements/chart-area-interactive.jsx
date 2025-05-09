@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
+import * as React from "react";
+import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 
 import {
   Card,
@@ -9,56 +9,53 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/components/ui/chart"
+} from "@/components/ui/chart";
 
-{/* Data below are calculated average per year from their respective csv data for further clearance 
-    Please check the uploaded csv or the research paper publish on devpost thank
-  */}
+/* 
+  Data below are calculated average per year from their respective csv data for further clearance
+  Please check the uploaded csv or the research paper publish on devpost thank you
+*/
+const chartData = [
+  { year: 2010, GiniIndex: 43 },
+  { year: 2011, GiniIndex: 35 },
+  { year: 2012, GiniIndex: 47 },
+  { year: 2013, GiniIndex: 42 },
+  { year: 2014, GiniIndex: 44 },
+  { year: 2015, GiniIndex: 38 },
+  { year: 2016, GiniIndex: 39 },
+  { year: 2017, GiniIndex: 39 },
+  { year: 2018, GiniIndex: 41 },
+  { year: 2019, GiniIndex: 44 },
+  { year: 2020, GiniIndex: 45 },
+  { year: 2021, GiniIndex: 40 },
+  { year: 2022, GiniIndex: 40 },
+  { year: 2023, GiniIndex: 48 },
+  { year: 2024, GiniIndex: 42 },
+  { year: 2025, GiniIndex: 42 },
+];
 
-  const chartData = [
-    { year: 2010, GiniIndex: 43 },
-    { year: 2011, GiniIndex: 35 },
-    { year: 2012, GiniIndex: 47 },
-    { year: 2013, GiniIndex: 42 },
-    { year: 2014, GiniIndex: 44 },
-    { year: 2015, GiniIndex: 38 },
-    { year: 2016, GiniIndex: 39 },
-    { year: 2017, GiniIndex: 39 },
-    { year: 2018, GiniIndex: 41 },
-    { year: 2019, GiniIndex: 44 },
-    { year: 2020, GiniIndex: 45 },
-    { year: 2021, GiniIndex: 40 },
-    { year: 2022, GiniIndex: 40 },
-    { year: 2023, GiniIndex: 48 },
-    { year: 2024, GiniIndex: 42 },
-    { year: 2025, GiniIndex: 42 },
-  ];
 const chartConfig = {
-  views: {
-    label: "Page Views",
-  },
   giniIndex: {
     label: "Gini Index",
     color: "var(--primary)",
   },
-}
+};
 
 export function ChartAreaInteractive() {
-  const [activeChart, setActiveChart] =
-    React.useState("giniIndex")
+  const [activeChart, setActiveChart] = React.useState("giniIndex");
 
   const total = React.useMemo(
     () => ({
-      giniIndex: chartData.reduce((acc, curr) => acc + curr.giniIndex, 0),
+      giniIndex: chartData.reduce((acc, curr) => acc + curr.GiniIndex, 0),
     }),
     []
-  )
+  );
 
   return (
     <Card>
@@ -71,22 +68,21 @@ export function ChartAreaInteractive() {
         </div>
         <div className="flex">
           {["giniIndex"].map((key) => {
-            const chart = key 
             return (
               <button
-                key={chart}
-                data-active={activeChart === chart}
+                key={key}
+                data-active={activeChart === key}
                 className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
-                onClick={() => setActiveChart(chart)}
+                onClick={() => setActiveChart(key)}
               >
                 <span className="text-xs text-muted-foreground">
-                  {chartConfig[chart].label}
+                  {chartConfig[key].label}
                 </span>
                 <span className="text-lg font-bold leading-none sm:text-3xl">
                   {total[key].toLocaleString()}
                 </span>
               </button>
-            )
+            );
           })}
         </div>
       </CardHeader>
@@ -110,26 +106,21 @@ export function ChartAreaInteractive() {
               tickLine={false}
               axisLine={false}
               tickMargin={8}
-              minTickGap={32}/>
+              minTickGap={32}
+            />
             <ChartTooltip
               content={
                 <ChartTooltipContent
                   className="w-[150px]"
-                  nameKey="views"
-                  labelFormatter={(value) => {
-                    return new Date(value).toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                      year: "numeric",
-                    })
-                  }}
+                  nameKey="GiniIndex"
+                  labelFormatter={(value) => `Year: ${value}`}
                 />
               }
             />
-            <Bar dataKey={activeChart} fill={`var(--color-${activeChart})`} />
+            <Bar dataKey="GiniIndex" fill={chartConfig.giniIndex.color} />
           </BarChart>
         </ChartContainer>
       </CardContent>
     </Card>
-  )
+  );
 }
