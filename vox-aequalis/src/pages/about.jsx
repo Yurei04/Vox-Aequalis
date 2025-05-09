@@ -6,8 +6,8 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
-import { Label } from "../ui/label"
-import { Card, CardContent } from "../ui/card"
+import { Label } from "../components/ui/label"
+import { Card, CardContent } from "../components/ui/card"
 const contents = {
 
     website: [

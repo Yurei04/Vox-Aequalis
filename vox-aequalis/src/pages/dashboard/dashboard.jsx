@@ -8,8 +8,8 @@ import {
   SidebarProvider,
 } from "@/components/ui/sidebar"
 
-import { GraphCards } from "../../elements/graphs"
-import CommunityForum from "../../elements/community-forum"
+import { GraphCards } from "@/components/elements/graphs"
+import CommunityForum from "@/components/elements/community-forum"
 
 export default function Dashboard() {
   return (

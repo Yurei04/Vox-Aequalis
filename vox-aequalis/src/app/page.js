@@ -1,12 +1,12 @@
-import VoxAI from "@/components/sections/chat-bot/VoxAI";
-import Dashboard from "@/components/sections/dashboard/dashboard";
-import Homepage from "@/components/sections/homepage/home";
-import ResearchHub from "@/components/sections/research-hub/research-hub";
+import VoxAI from "@/pages/chat-bot/VoxAI";
+import Dashboard from "@/pages/dashboard/dashboard";
+import Homepage from "@/pages/homepage/home";
+import ResearchHub from "@/pages/research-hub/research-hub";
 
 export default function Home() {
   return (
     <>
-      <ResearchHub />
+      <Dashboard />
     </>
   );
 }

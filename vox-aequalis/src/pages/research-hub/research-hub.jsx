@@ -9,8 +9,8 @@ import {
 
 import data from "./contents.json"
 import {DataResearchTable}   from "@/components/elements/data-table-research"
-import ChartAreaInteractiveResearch from "../../elements/chart-area-int-research"
-import { SectionCardsResearch } from "../../elements/section-cards-research"
+import ChartAreaInteractiveResearch from "@/components/elements/chart-area-int-research"
+import { SectionCardsResearch } from "@/components/elements/section-cards-research"
 
 export default function ResearchHub () {
     return (
