@@ -9,7 +9,7 @@
 - ** Data Analytics Dashboard**  
   Visualizes trends and statistics about inequality across multiple categories using real-time data.
 
-- ** Machine Learning Forecasts**  
+- ** Machine Learning Forecasts Data**  
   Predicts future inequality metrics using trained models for long-term insights.
 
 - ** NLP Chatbot**  
@@ -33,12 +33,13 @@
 
 ## Technologies Used
 
-- **Frontend**: Next.js, Tailwind CSS, shadcn/ui  
-- **Backend**: Node.js, Express (optional)  
+- **Frontend**: Next.js, React, Tailwind CSS, shadcn/ui  
+- **Backend**: Node.js, Flask, FlaskCORS
+- **DataBase**: Json
 - **Machine Learning**: Python (Pandas, Scikit-learn, Matplotlib, etc.)  
-- **Data Visualization**: Recharts, Chart.js  
-- **NLP**: Chatbot using JavaScript or Python NLP libraries (e.g., spaCy, NLP.js)  
-- **Hosting**: Vercel / Netlify (for frontend), Render / Railway (optional backend)
+- **Data Visualization**: Shadcn Graphs, Python
+- **NLP**: Chatbot using JavaScript, Python NLP NLTK
+- **Hosting**: Vercel 
 
 ---
 
