@@ -30,6 +30,7 @@ import {
   IconLayoutColumns,
   IconLoader,
   IconPlus,
+  IconTrendingDown,
   IconTrendingUp,
 } from "@tabler/icons-react"
 import {
@@ -604,7 +605,7 @@ function TableCellViewer({
         <DrawerHeader className="gap-1">
           <DrawerTitle>{item.header}</DrawerTitle>
           <DrawerDescription>
-            Showing total visitors for the last 6 months
+            Showing total Inequality In the Job Market
           </DrawerDescription>
         </DrawerHeader>
         <div className="flex flex-col gap-4 overflow-y-auto px-4 text-sm">
@@ -646,13 +647,12 @@ function TableCellViewer({
               <Separator />
               <div className="grid gap-2">
                 <div className="flex gap-2 leading-none font-medium">
-                  Trending up by 5.2% this month{" "}
-                  <IconTrendingUp className="size-4" />
+                  Inequality Decrease of 0.13%{" "}
+                  <IconTrendingDown className="size-4" />
                 </div>
                 <div className="text-muted-foreground">
-                  Showing total visitors for the last 6 months. This is just
-                  some random text to test the layout. It spans multiple lines
-                  and should wrap around.
+                  Showing results of machine learning model
+                  prediction of inequality in 5 years
                 </div>
               </div>
               <Separator />
@@ -672,21 +672,19 @@ function TableCellViewer({
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="Table of Contents">
-                      Table of Contents
+                      Remote
                     </SelectItem>
                     <SelectItem value="Executive Summary">
-                      Executive Summary
+                      On-Site
                     </SelectItem>
                     <SelectItem value="Technical Approach">
-                      Technical Approach
+                      Hybrid
                     </SelectItem>
-                    <SelectItem value="Design">Design</SelectItem>
-                    <SelectItem value="Capabilities">Capabilities</SelectItem>
+                    <SelectItem value="Design">Internship</SelectItem>
+                    <SelectItem value="Capabilities">Part Time</SelectItem>
                     <SelectItem value="Focus Documents">
-                      Focus Documents
+                      Full Time
                     </SelectItem>
-                    <SelectItem value="Narrative">Narrative</SelectItem>
-                    <SelectItem value="Cover Page">Cover Page</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -697,9 +695,9 @@ function TableCellViewer({
                     <SelectValue placeholder="Select a status" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="Done">Done</SelectItem>
-                    <SelectItem value="In Progress">In Progress</SelectItem>
-                    <SelectItem value="Not Started">Not Started</SelectItem>
+                    <SelectItem value="Done">Hiring</SelectItem>
+                    <SelectItem value="In Progress">Interview</SelectItem>
+                    <SelectItem value="Not Started">Not Hiring</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -721,18 +719,18 @@ function TableCellViewer({
                   <SelectValue placeholder="Select a reviewer" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="Eddie Lake">Eddie Lake</SelectItem>
+                  <SelectItem value="Eddie Lake">XYZ company</SelectItem>
                   <SelectItem value="Jamik Tashpulatov">
-                    Jamik Tashpulatov
+                    Lorem Inc.
                   </SelectItem>
-                  <SelectItem value="Emily Whalen">Emily Whalen</SelectItem>
+                  <SelectItem value="Emily Whalen">MaybeMaybe company</SelectItem>
                 </SelectContent>
               </Select>
             </div>
           </form>
         </div>
         <DrawerFooter>
-          <Button>Submit</Button>
+          <Button>Go to Website</Button>
           <DrawerClose asChild>
             <Button variant="outline">Done</Button>
           </DrawerClose>
