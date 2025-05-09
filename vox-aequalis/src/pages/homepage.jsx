@@ -15,7 +15,7 @@ import { Card, CardContent } from "@/components/ui/card"
 export default function Homepage(className, ...props) {
 
     const pluginOne = React.useRef(
-        Autoplay({ delay: 2000, stopOnInteraction: true })
+        Autoplay({ delay: 1000, stopOnInteraction: true })
     )
 
     const pluginTwo = React.useRef(
@@ -27,7 +27,7 @@ export default function Homepage(className, ...props) {
     )
 
     const pluginFour = React.useRef(
-        Autoplay({ delay: 2000, stopOnInteraction: true })
+        Autoplay({ delay: 1500, stopOnInteraction: true })
     )
 
     const caroselImg = [
@@ -138,7 +138,7 @@ export default function Homepage(className, ...props) {
                         />
                         </h3>
                         <p className="text-rose dark:text-rose-100 text-center">
-                        "Where every ability finds its place."
+                        Illuminating disparities through data
                         </p>
                     </motion.div>
 
@@ -160,7 +160,7 @@ export default function Homepage(className, ...props) {
                             </Button>
                             <Button>
                                 <Link href={"#"}>
-                                    Chat Bot
+                                    Vox AI
                                 </Link>
                             </Button>
                         </div>
