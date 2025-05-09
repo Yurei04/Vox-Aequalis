@@ -63,84 +63,85 @@ const data = {
     {
       name: "William Smith",
       email: "williamsmith@example.com",
-      subject: "Meeting Tomorrow",
+      subject: "Policy Advocacy Meeting Tomorrow",
       date: "09:34 AM",
       teaser:
-        "Hi team, just a reminder about our meeting tomorrow at 10 AM.\nPlease come prepared with your project updates.",
+        "Hi all, just a reminder about our advocacy strategy meeting tomorrow at 10 AM.\nWe'll review recent legislative updates and align on next steps.",
     },
     {
       name: "Alice Smith",
       email: "alicesmith@example.com",
-      subject: "Re: Project Update",
+      subject: "Re: Draft Report on Income Disparity",
       date: "Yesterday",
       teaser:
-        "Thanks for the update. The progress looks great so far.\nLet's schedule a call to discuss the next steps.",
+        "Thanks for sharing the draft. The data is compelling so far.\nLet’s set a call to fine-tune the recommendations before submission.",
     },
     {
       name: "Bob Johnson",
       email: "bobjohnson@example.com",
-      subject: "Weekend Plans",
+      subject: "Planning a Community Listening Event",
       date: "2 days ago",
       teaser:
-        "Hey everyone! I'm thinking of organizing a team outing this weekend.\nWould you be interested in a hiking trip or a beach day?",
+        "I'm organizing a public forum to hear from residents about economic inequality.\nWould you be available to help with logistics or panel outreach?",
     },
     {
       name: "Emily Davis",
       email: "emilydavis@example.com",
-      subject: "Re: Question about Budget",
+      subject: "Re: Budget for Mutual Aid Program",
       date: "2 days ago",
       teaser:
-        "I've reviewed the budget numbers you sent over.\nCan we set up a quick call to discuss some potential adjustments?",
+        "I've reviewed the proposal and funding breakdown.\nCan we set up a call to explore ways to maximize impact with our current budget?",
     },
     {
       name: "Michael Wilson",
       email: "michaelwilson@example.com",
-      subject: "Important Announcement",
+      subject: "Urgent: Housing Coalition Briefing",
       date: "1 week ago",
       teaser:
-        "Please join us for an all-hands meeting this Friday at 3 PM.\nWe have some exciting news to share about the company's future.",
+        "Please join Friday’s all-hands session at 3 PM.\nWe’ll cover recent policy changes and mobilize around tenant protection efforts.",
     },
     {
       name: "Sarah Brown",
       email: "sarahbrown@example.com",
-      subject: "Re: Feedback on Proposal",
+      subject: "Re: Feedback on Justice Reform Proposal",
       date: "1 week ago",
       teaser:
-        "Thank you for sending over the proposal. I've reviewed it and have some thoughts.\nCould we schedule a meeting to discuss my feedback in detail?",
+        "Thanks for the proposal draft. I’ve added comments regarding community safety sections.\nLet’s meet to align our messaging and data points.",
     },
     {
       name: "David Lee",
       email: "davidlee@example.com",
-      subject: "New Project Idea",
+      subject: "Proposal: Digital Access for Underserved Areas",
       date: "1 week ago",
       teaser:
-        "I've been brainstorming and came up with an interesting project concept.\nDo you have time this week to discuss its potential impact and feasibility?",
+        "I’ve been brainstorming an initiative to boost digital inclusion in rural areas.\nCan we connect this week to evaluate its feasibility?",
     },
     {
       name: "Olivia Wilson",
       email: "oliviawilson@example.com",
-      subject: "Vacation Plans",
+      subject: "Upcoming Personal Leave",
       date: "1 week ago",
       teaser:
-        "Just a heads up that I'll be taking a two-week vacation next month.\nI'll make sure all my projects are up to date before I leave.",
+        "Just a heads-up—I’ll be on leave for two weeks next month.\nI’ll ensure all outreach and documentation is in place before I go.",
     },
     {
       name: "James Martin",
       email: "jamesmartin@example.com",
-      subject: "Re: Conference Registration",
+      subject: "Re: Conference on Social Equity",
       date: "1 week ago",
       teaser:
-        "I've completed the registration for the upcoming tech conference.\nLet me know if you need any additional information from my end.",
+        "I’ve confirmed my attendance for the national social equity summit.\nLet me know if you'd like me to present our latest campaign findings.",
     },
     {
       name: "Sophia White",
       email: "sophiawhite@example.com",
-      subject: "Team Dinner",
+      subject: "Community Potluck Invitation",
       date: "1 week ago",
       teaser:
-        "To celebrate our recent project success, I'd like to organize a team dinner.\nAre you available next Friday evening? Please let me know your preferences.",
+        "To celebrate our progress this quarter, I’d like to host a community potluck.\nLet me know your availability and what you might bring!",
     },
-  ],
+  ]
+  
 }
 
 export function AppSidebar({

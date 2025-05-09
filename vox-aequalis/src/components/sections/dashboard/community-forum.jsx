@@ -30,53 +30,102 @@ const data = {
     ],
     comments: [
         {
-            id: 1,
-            name: "Bob Johnson",
-            username: "BobB0b",
-            subject: "Weekend Plans",
-            date: "2 days ago",
-            teaser:
-              "Hey everyone! I'm thinking of organizing a team outing this weekend.\nWould you be interested in a hiking trip or a beach day?",
+          id: 1,
+          name: "Aisha Grant",
+          username: "AishaVoices",
+          subject: "How can we address wage inequality?",
+          date: "2 days ago",
+          teaser:
+            "I’ve been researching wage gaps across industries and it's frustrating how persistent they are.\nWhat local initiatives or policies have worked in your communities?",
         },
         {
-            id: 2,
-            name: "James Martin",
-            email: "jamesmartin@example.com",
-            subject: "Re: Conference Registration",
-            date: "1 week ago",
-            teaser:
-              "I've completed the registration for the upcoming tech conference.\nLet me know if you need any additional information from my end.",
+          id: 2,
+          name: "Carlos Rivera",
+          email: "c.rivera@example.com",
+          subject: "Disparities in education funding",
+          date: "1 week ago",
+          teaser:
+            "Public schools in low-income areas are seriously underfunded.\nAnyone here working on campaigns or volunteer tutoring programs?",
         },
         {
-            id: 3,
-            name: "Sophia White",
-            email: "sophiawhite@example.com",
-            subject: "Team Dinner",
-            date: "1 week ago",
-            teaser:
-              "To celebrate our recent project success, I'd like to organize a team dinner.\nAre you available next Friday evening? Please let me know your preferences.",
+          id: 3,
+          name: "Mei Lin",
+          email: "mei_lin@example.com",
+          subject: "Affordable housing stories?",
+          date: "1 week ago",
+          teaser:
+            "I’m compiling personal experiences related to housing inequality.\nIf you've faced eviction, long waitlists, or rent spikes, I’d love to hear your story.",
         },
         {
-            id: 4,
-            name: "James Martin",
-            email: "jamesmartin@example.com",
-            subject: "Re: Conference Registration",
-            date: "1 week ago",
-            teaser:
-              "I've completed the registration for the upcoming tech conference.\nLet me know if you need any additional information from my end.",
+          id: 4,
+          name: "David Okoye",
+          email: "d.okoye@example.com",
+          subject: "Racial equity roundtable next week",
+          date: "5 days ago",
+          teaser:
+            "We’re hosting an online roundtable to talk about systemic racial inequality and how to build more inclusive policies.\nRSVP if you'd like to join!",
         },
         {
-            id: 5,
-            name: "Sophia White",
-            email: "sophiawhite@example.com",
-            subject: "Team Dinner",
-            date: "1 week ago",
-            teaser:
-              "To celebrate our recent project success, I'd like to organize a team dinner.\nAre you available next Friday evening? Please let me know your preferences.",
+          id: 5,
+          name: "Nina Patel",
+          email: "nina.p@example.com",
+          subject: "Rural vs Urban healthcare inequality",
+          date: "3 days ago",
+          teaser:
+            "Access to healthcare in rural areas is still so limited.\nAnyone here from a rural background willing to share how it affects your family?",
         },
-    ]
-}
+      ],
+      groups: [
+        {
+          id: 1,
+          name: "Equity in Education",
+          username: "edufair_group",
+          subject: "Closing the School Funding Gap",
+          date: "3 days ago",
+          teaser:
+            "This group focuses on addressing educational disparities across socioeconomic lines.\nWe share resources, policy updates, and collaborate on outreach programs.",
+        },
+        {
+          id: 2,
+          name: "Wage Justice Coalition",
+          username: "fairpay_now",
+          subject: "Fighting for Fair Wages",
+          date: "1 week ago",
+          teaser:
+            "A space for labor activists, economists, and community leaders pushing for equitable pay.\nJoin us to discuss living wages, union efforts, and salary transparency.",
+        },
+        {
+          id: 3,
+          name: "Housing for All",
+          username: "affordablehomes",
+          subject: "Tackling the Housing Crisis",
+          date: "2 days ago",
+          teaser:
+            "From rent control to public housing policy, this group advocates for housing as a human right.\nWe support tenants, share legal aid, and drive campaigns.",
+        },
+        {
+          id: 4,
+          name: "Healthcare Equity Circle",
+          username: "healthequal",
+          subject: "Access for Every Community",
+          date: "5 days ago",
+          teaser:
+            "We aim to improve healthcare access in underserved areas.\nMembers include public health experts, rural healthcare workers, and patients.",
+        },
+        {
+          id: 5,
+          name: "Voices Against Discrimination",
+          username: "inclusivevoices",
+          subject: "Fighting Racial & Social Injustice",
+          date: "6 days ago",
+          teaser:
+            "This is a safe space for dialogue, support, and activism around racial and systemic injustice.\nShare your experiences, organize events, and learn together.",
+        },
+      ]
+      
+    }    
 
+    
 export default function CommunityForum (...props) {
     return (
         <div className="flex flex-col w-full h-[90%] items-center ">
@@ -125,18 +174,18 @@ export default function CommunityForum (...props) {
                         </CardHeader>
                         <CardContent className="flex flex-row gap-5">
                             <ScrollArea className="h-[90%] w-full  rounded-md">
-                                {data.comments.slice(0, 5).map((comment) => (
+                                {data.groups.slice(0, 5).map((group) => (
                                     <div
-                                        key={comment.id}
+                                        key={group.id}
                                         className="flex flex-col w-full items-start gap-2 whitespace-nowrap border-b p-4 text-sm leading-tight last:border-b-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
                                     >
                                         <div>
-                                            <span>{comment.name}</span>{" "}
-                                            <span className="ml-auto text-xs">{data.comments.date}</span>
+                                            <span>{group.name}</span>{" "}
+                                            <span className="ml-auto text-xs">{group.date}</span>
                                         </div>
-                                        <span className="font-medium">{comment.subject}</span>
+                                        <span className="font-medium">{group.subject}</span>
                                         <span className="line-clamp-2 w-[260px] whitespace-break-spaces text-xs">
-                                            {comment.teaser}
+                                            {group.teaser}
                                         </span>
                                     </div>
                                 ))}
