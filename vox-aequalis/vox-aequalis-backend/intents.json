@@ -1,50 +1,177 @@
 {
-    "intents": [
-      {
-        "tag": "greeting",
-        "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good evening"],
-        "responses": ["Hello!", "Hi there!", "Greetings!", "Welcome!"]
-      },
-      {
-        "tag": "goodbye",
-        "patterns": ["Bye", "See you", "Goodbye", "Catch you later"],
-        "responses": ["See you later!", "Goodbye!", "Take care!", "Have a great day!"]
-      },
-      {
-        "tag": "thanks",
-        "patterns": ["Thanks", "Thank you", "Much appreciated"],
-        "responses": ["You're welcome!", "No problem!", "Glad I could help!"]
-      },
-      {
-        "tag": "social_inequality",
-        "patterns": [
-          "What is social inequality?",
-          "Tell me about social inequality",
-          "Explain social inequality",
-          "How does social inequality affect people?",
-          "Why is there social inequality?"
-        ],
-        "responses": [
-          "Social inequality refers to the unequal distribution of resources, opportunities, and privileges within a society.",
-          "It includes disparities in income, education, healthcare, and housing, often affecting marginalized communities the most.",
-          "Social inequality is influenced by factors like class, race, ethnicity, and location, and can lead to limited access to basic human rights for certain groups."
-        ]
-      },
-      {
-        "tag": "gender_inequality",
-        "patterns": [
-          "What is gender inequality?",
-          "Tell me about gender inequality",
-          "Why is gender inequality a problem?",
-          "How does gender inequality show up in society?",
-          "Explain the issue of gender inequality"
-        ],
-        "responses": [
-          "Gender inequality is the unfair treatment of individuals based on their gender, often resulting in unequal opportunities and outcomes for women, men, and non-binary people.",
-          "It can be seen in wage gaps, underrepresentation in leadership roles, and social expectations based on gender.",
-          "Addressing gender inequality involves promoting equal rights, representation, and access for all genders."
-        ]
-      }
-    ]
-  }
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good evening"],
+      "responses": ["Hello!", "Hi there!", "Greetings!", "Welcome!"]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you", "Goodbye", "Catch you later"],
+      "responses": ["See you later!", "Goodbye!", "Take care!", "Have a great day!"]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "Much appreciated"],
+      "responses": ["You're welcome!", "No problem!", "Glad I could help!"]
+    },
+    {
+      "tag": "social_inequality",
+      "patterns": [
+        "What is social inequality?",
+        "Tell me about social inequality",
+        "Explain social inequality",
+        "How does social inequality affect people?",
+        "Why is there social inequality?"
+      ],
+      "responses": [
+        "Social inequality refers to the unequal distribution of resources, opportunities, and privileges within a society.",
+        "It includes disparities in income, education, healthcare, and housing, often affecting marginalized communities the most.",
+        "Social inequality is influenced by factors like class, race, ethnicity, and location, and can lead to limited access to basic human rights for certain groups."
+      ]
+    },
+    {
+      "tag": "gender_inequality",
+      "patterns": [
+        "What is gender inequality?",
+        "Tell me about gender inequality",
+        "Why is gender inequality a problem?",
+        "How does gender inequality show up in society?",
+        "Explain the issue of gender inequality"
+      ],
+      "responses": [
+        "Gender inequality is the unfair treatment of individuals based on their gender, often resulting in unequal opportunities and outcomes for women, men, and non-binary people.",
+        "It can be seen in wage gaps, underrepresentation in leadership roles, and social expectations based on gender.",
+        "Addressing gender inequality involves promoting equal rights, representation, and access for all genders."
+      ]
+    },
+    {
+      "tag": "economic_inequality",
+      "patterns": [
+        "What is economic inequality?",
+        "Tell me about income inequality",
+        "Why do some people earn more than others?",
+        "Explain wealth disparity",
+        "Why is economic inequality rising?"
+      ],
+      "responses": [
+        "Economic inequality refers to the unequal distribution of income and wealth among individuals or groups.",
+        "It can lead to reduced economic mobility, social tensions, and limited access to opportunities for the poor.",
+        "Policies like fair wages, progressive taxation, and equal access to education can help reduce economic inequality."
+      ]
+    },
+    {
+      "tag": "racial_inequality",
+      "patterns": [
+        "What is racial inequality?",
+        "Tell me about racism in society",
+        "Why do racial minorities face disadvantages?",
+        "How does racism affect people?",
+        "Is racial inequality still a problem today?"
+      ],
+      "responses": [
+        "Racial inequality refers to the systemic disadvantages faced by people based on their race or ethnicity.",
+        "It can be seen in policing, education, employment, and access to services.",
+        "Fighting racial inequality requires systemic changes and social awareness to ensure equal treatment for all races."
+      ]
+    },
+    {
+      "tag": "educational_inequality",
+      "patterns": [
+        "Why do some people have better education than others?",
+        "What is educational inequality?",
+        "Tell me about unequal education opportunities",
+        "Why is education unfair in some places?",
+        "Explain the gap in educational quality"
+      ],
+      "responses": [
+        "Educational inequality arises when people have different access to quality education due to factors like income, location, or race.",
+        "Students in poorer areas often lack resources like qualified teachers, books, and technology.",
+        "Solving this involves investing in schools, equal funding, and supporting underserved communities."
+      ]
+    },
+    {
+      "tag": "healthcare_inequality",
+      "patterns": [
+        "What is healthcare inequality?",
+        "Why do some people get better healthcare?",
+        "Tell me about health disparities",
+        "How does income affect health services?",
+        "Explain inequality in health systems"
+      ],
+      "responses": [
+        "Healthcare inequality means unequal access to medical services, often depending on income, geography, or race.",
+        "People in rural or poor communities may not receive adequate treatment or preventive care.",
+        "Universal healthcare and health education can help reduce this gap."
+      ]
+    },
+    {
+      "tag": "digital_inequality",
+      "patterns": [
+        "What is the digital divide?",
+        "Why do some people lack internet access?",
+        "Tell me about digital inequality",
+        "How does tech access affect education?",
+        "Is internet access a basic right?"
+      ],
+      "responses": [
+        "Digital inequality refers to unequal access to technology like computers, smartphones, and the internet.",
+        "It affects education, job opportunities, and access to information.",
+        "Bridging the digital divide is essential for equal participation in modern society."
+      ]
+    },
+    {
+      "tag": "disability_inequality",
+      "patterns": [
+        "Tell me about inequality for people with disabilities",
+        "Why is it hard for disabled people to find jobs?",
+        "Explain disability discrimination",
+        "What barriers do disabled individuals face?",
+        "What is disability inequality?"
+      ],
+      "responses": [
+        "Disability inequality involves unfair treatment and lack of access for people with disabilities.",
+        "Barriers include inaccessible buildings, lack of inclusive education, and limited employment opportunities.",
+        "Promoting accessibility, inclusive design, and legal protections can help ensure equal rights for all."
+      ]
+    },
+    {
+      "tag": "how_are_you",
+      "patterns": ["How are you?", "How's it going?", "What's up?", "You okay?"],
+      "responses": [
+        "I'm just a bot, but I'm functioning perfectly!",
+        "I'm here and ready to help you.",
+        "Doing great! How can I assist you today?"
+      ]
+    },
+    {
+      "tag": "what_is_your_name",
+      "patterns": ["What's your name?", "Who are you?", "Do you have a name?"],
+      "responses": [
+        "I'm your friendly chatbot here to talk about inequality and more!",
+        "You can call me whatever you like — I'm here to help.",
+        "I'm an assistant created to answer your questions on social issues."
+      ]
+    },
+    {
+      "tag": "what_can_you_do",
+      "patterns": ["What can you do?", "How can you help?", "What are your abilities?"],
+      "responses": [
+        "I can answer questions about social, gender, and economic inequality, among other related topics.",
+        "I help explain inequality and suggest ways to address it.",
+        "I'm here to inform you about various types of inequality and their impacts."
+      ]
+    },
+    {
+      "tag": "who_made_you",
+      "patterns": ["Who made you?", "Who created you?", "Who built you?"],
+      "responses": [
+        "I was created by a developer focused on raising awareness about inequality.",
+        "A human designed me to help people learn about social issues.",
+        "I was programmed to assist with questions on justice, equity, and inclusion."
+      ]
+    }
+    
+  ]
   
+}
