@@ -21,10 +21,9 @@ import {
 
 import "@/app/globals.css";
 
-
 const chartData = [
-    { subject: "men", total: 1856, fill: "var(--primary)" },
-    { subject: "women", total: 2688, fill: "var(--chart-4)" },
+    { subject: "men", total: 2688, fill: "var(--primary)" },
+    { subject: "women", total: 1856, fill: "var(--chart-4)" },
   ]
 
 
