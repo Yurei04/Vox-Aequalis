@@ -312,7 +312,7 @@ function DraggableRow({
 export default function DataResearchTable({
   data: initialData
 }) {
-  const [data, setData] = React.useState(() => initialData)
+  const [data, setData] = React.useState(() => initialData || [])
   const [rowSelection, setRowSelection] = React.useState({})
   const [columnVisibility, setColumnVisibility] =
     React.useState({})
@@ -456,7 +456,7 @@ export default function DataResearchTable({
                 ))}
               </TableHeader>
               <TableBody className="**:data-[slot=table-cell]:first:w-8">
-                {table.getRowModel().rows && table.getRowModel().rows.length > 0 ? (
+                {Array.isArray(table.getRowModel().rows) && table.getRowModel().rows.length > 0 ? (
                   <SortableContext items={dataIds} strategy={verticalListSortingStrategy}>
                     {table.getRowModel().rows.map((row) => (
                       <DraggableRow key={row.id} row={row} />
