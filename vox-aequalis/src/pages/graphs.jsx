@@ -94,7 +94,7 @@ const chartConfigFour = {
     },
 }
 
-export function GraphCards() {
+export default function GraphCards() {
     const totalSubject = React.useMemo(() => {
         return chartData.reduce((acc, curr) => acc + curr.total, 0)
       }, [])

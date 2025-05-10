@@ -1,16 +1,9 @@
 "use client"
 
-import AppSidebarMain from "@/components/elements/app-sidebar-main"
-import { SiteHeader } from "@/components/elements/site-header"
-import {
-  SidebarInset,
-  SidebarProvider,
-} from "@/components/ui/sidebar"
-
 import data from "./contents.json"
-import {DataResearchTable}   from "@/pages/data-table-research"
+import DataResearchTable   from "@/pages/data-table-research"
 import ChartAreaInteractiveResearch from "@/pages/chart-area-int-research"
-import { SectionCardsResearch } from "@/pages/section-cards-research"
+import SectionCardsResearch from "@/pages/section-cards-research"
 
 export default function ResearchHub () {
     return (

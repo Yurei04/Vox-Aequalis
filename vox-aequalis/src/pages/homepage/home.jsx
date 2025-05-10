@@ -1,9 +1,6 @@
 "use client"
 
-import AppSidebarMain from "@/components/elements/app-sidebar-main"
 import Homepage from "@/pages/homepage"
-import { SiteHeader } from "@/components/elements/site-header"
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
 import About from "../about"
 
 

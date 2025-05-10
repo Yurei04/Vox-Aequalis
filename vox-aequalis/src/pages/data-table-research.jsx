@@ -309,7 +309,7 @@ function DraggableRow({
   );
 }
 
-export function DataResearchTable({
+export default function DataResearchTable({
   data: initialData
 }) {
   const [data, setData] = React.useState(() => initialData)
@@ -426,14 +426,6 @@ export function DataResearchTable({
                 })}
             </DropdownMenuContent>
           </DropdownMenu>
-          <Dialog>
-            <DialogTrigger>
-                <Button variant="outline" size="sm">
-                    <IconPlus />
-                    <span className="hidden lg:inline">Search</span>
-                </Button>
-            </DialogTrigger>
-          </Dialog>
 
         </div>
       </div>

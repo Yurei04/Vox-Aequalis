@@ -1,14 +1,7 @@
 "use client"
 
-import { AppSidebar } from "@/components/elements/app-sidebar"
-import {ChartAreaInteractive} from "@/pages/chart-area-interactive"
-import { SiteHeader } from "@/components/elements/site-header"
-import {
-  SidebarInset,
-  SidebarProvider,
-} from "@/components/ui/sidebar"
-
-import { GraphCards } from "@/pages/graphs"
+import ChartAreaInteractive from "@/pages/chart-area-interactive"
+import  GraphCards  from "@/pages/graphs"
 import CommunityForum from "@/pages/community-forum"
 
 export default function Dashboard() {

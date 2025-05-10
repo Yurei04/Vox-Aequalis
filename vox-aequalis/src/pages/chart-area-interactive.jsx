@@ -47,7 +47,7 @@ const chartConfig = {
   },
 };
 
-export function ChartAreaInteractive() {
+export default function ChartAreaInteractive() {
   const [activeChart, setActiveChart] = React.useState("giniIndex");
 
   const total = React.useMemo(

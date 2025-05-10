@@ -12,16 +12,19 @@ const contents = {
 
     website: [
         {
+            id: 1,
             title: "What is Vox Aequalis?",
             des: "Vox Aequalis is a data analytics platform that visualizes and forecasts inequality trends using datasets from Kaggle and the World Bank. It leverages machine learning to present insights on social and economic disparities, helping users understand the broader landscape of global inequality.",
             value: "item-1"
         },
         {
+            id: 2,
             title: "What features does Vox Aequalis offer?",
             des: "Vox Aequalis combines interactive data visualizations, machine learning-based predictions, a community forum, a job evaluation tool, and an NLP chatbot. Users can explore real-world inequality metrics, join discussions, evaluate workplaces, and ask questions related to social justice.",
             value: "item-2"
         },
         {
+            id: 3,
             title: "Who is Vox Aequalis for?",
             des: "Vox Aequalis is designed for researchers, job seekers, students, HR professionals, and anyone interested in understanding or addressing inequality. It creates a space for data-driven learning, community sharing, and activism around social and economic fairness.",
             value: "item-3"
@@ -30,16 +33,19 @@ const contents = {
 
     research: [
         {
+            id: 1,
             title: "What is the research all about?",
             des: "The core research behind Vox Aequalis focuses on collecting, analyzing, and forecasting inequality data using statistical methods and machine learning. It draws from reputable sources to build evidence-based insights that expose systemic disparities in gender, income, labor, and more.",
             value: "item-1"
         },
         {
+            id: 2,
             title: "What is Vox Aequalis' research goal?",
             des: "The goal is to quantify inequality using global data, develop predictive models to anticipate future trends, and translate complex findings into accessible visuals. Vox Aequalis aims to empower users with knowledge that fuels advocacy and informed decisions.",
             value: "item-2"
         },
         {
+            id: 3,
             title: "How can this research help?",
             des: "By making inequality data transparent and interactive, this research helps policymakers, HR teams, and the general public recognize disparities and push for fairer treatment. It supports evidence-based action in education, employment, and governance.",
             value: "item-3"
@@ -49,16 +55,19 @@ const contents = {
 
     social: [
         {
+            id: 1,
             title: "What is inequality?",
             des: "Inequality is the uneven distribution of resources, opportunities, and rights across different groups in society. It can be economic, racial, educational, or based on gender, geography, or disability, and often leads to marginalization and social unrest.",
             value: "item-1"
         },
         {
+            id: 2,
             title: "How does inequality affect people?",
             des: "People affected by inequality often face limited access to education, healthcare, fair wages, and representation. It deepens poverty, hinders development, and fosters resentment and division within communities and institutions.",
             value: "item-2"
         },
         {
+            id: 3,
             title: "How can Vox Aequalis reduce or help mitigate inequality?",
             des: "Vox Aequalis informs the public with real-time inequality data, encourages collective discussion in its forum, and provides tools for workplace transparency. By making disparities visible, it equips users to challenge injustice and promote equality-driven solutions.",
             value: "item-3"
@@ -78,7 +87,7 @@ export default function About () {
                     <Accordion type="single" collapsible className="w-full">
                         <Label>What is Vox Aequalis is all about?</Label>
                             {contents.website.map((content) => (
-                                <AccordionItem value={content.value}>
+                                <AccordionItem key={content.id} value={content.value}>
                                     <AccordionTrigger>{content.title}</AccordionTrigger>
                                     <AccordionContent>
                                         {content.des}
@@ -95,7 +104,7 @@ export default function About () {
                         <Accordion type="single" collapsible className="w-full">
                             <Label>Social/Gender Inequality Vox Aequalis Resaerch</Label>
                             {contents.website.map((content) => (
-                                <AccordionItem value={content.value}>
+                                <AccordionItem key={content.id} value={content.value}>
                                     <AccordionTrigger>{content.title}</AccordionTrigger>
                                     <AccordionContent>
                                         {content.des}
@@ -111,7 +120,7 @@ export default function About () {
                         <Accordion type="single" collapsible className="w-full">
                         <Label>What is/are Inequality</Label>   
                             {contents.website.map((content) => (
-                                <AccordionItem value={content.value}>
+                                <AccordionItem key={content.id} value={content.value}>
                                     <AccordionTrigger>{content.title}</AccordionTrigger>
                                     <AccordionContent>
                                         {content.des}
